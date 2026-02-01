@@ -1,0 +1,60 @@
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  min-height: 100vh;
+}
+
+#root {
+  max-width: 1280px;
+  position: relative;
+  top: -8px;
+  left: -8px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgb(168, 168, 168);
+}
+
+#login-card {
+  background-color: #e6e2ff;
+  display: grid;
+  place-items: center;
+  padding: 4rem 2rem 4rem 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  min-width: 256px;
+  height: 24rem;
+}
+
+#formitselft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-field {
+  margin-bottom: 1rem;
+  text-align: left;
+  width: fit-content;
+}
+
+.field {
+  width: 14rem;
+  height: 2rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#login-button {
+  max-width: 256px;
+  padding: 0.5rem 1rem;
+  height: 2.5rem;
+  background-color: #080072;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
