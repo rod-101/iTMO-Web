@@ -4,8 +4,6 @@
   align-items: center;
   background-color: green;
   position: relative;
-  left: -40px;
-  top: -40px;
   width: 40vh;
   height: 100vh;
 }
