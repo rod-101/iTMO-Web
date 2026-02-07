@@ -184,9 +184,9 @@ export default function Sidebar() {
       <div className="sidebar-header">
         <div className={`logo ${isCollapsed ? "collapsed" : ""}`}>
           {isCollapsed ? (
-            <img src={itmoLogo} alt="ITMO Logo" className="logo-icon" />
+            <img src={itmoLogo} alt="iTMO Logo" className="logo-icon" />
           ) : (
-            <img src={itmoLogo} alt="ITMO Logo" className="logo-full" />
+            <img src={itmoLogo} alt="iTMO Logo" className="logo-full" />
           )}
         </div>
       </div>
