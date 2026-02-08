@@ -1,15 +1,5 @@
-import { useState } from "react";
-import "../styles/newSidebar.css";
-import itmoLogo from "../assets/sidebar/itmo-logo.svg";
-import { Link } from "react-router-dom";
-
-interface MenuItem {
-  icon: React.FC<React.SVGProps<SVGSVGElement>>;
-  label: string;
-  path: string;
-}
-// SVG Icons as components
-const HomeIcon = () => (
+// SVG Icons used in Sidebar as components
+export const HomeIcon = () => (
   <svg
     width="20"
     height="20"
@@ -25,7 +15,7 @@ const HomeIcon = () => (
   </svg>
 );
 
-const MapIcon = () => (
+export const MapIcon = () => (
   <svg
     width="20"
     height="20"
@@ -43,7 +33,7 @@ const MapIcon = () => (
   </svg>
 );
 
-const AlertTriangleIcon = () => (
+export const AlertTriangleIcon = () => (
   <svg
     width="20"
     height="20"
@@ -60,7 +50,7 @@ const AlertTriangleIcon = () => (
   </svg>
 );
 
-const FileBarChartIcon = () => (
+export const FileBarChartIcon = () => (
   <svg
     width="20"
     height="20"
@@ -79,7 +69,7 @@ const FileBarChartIcon = () => (
   </svg>
 );
 
-const CalendarIcon = () => (
+export const CalendarIcon = () => (
   <svg
     width="20"
     height="20"
@@ -97,7 +87,7 @@ const CalendarIcon = () => (
   </svg>
 );
 
-const UsersIcon = () => (
+export const UsersIcon = () => (
   <svg
     width="20"
     height="20"
@@ -115,7 +105,7 @@ const UsersIcon = () => (
   </svg>
 );
 
-const ScalesIcon = () => (
+export const ScalesIcon = () => (
   <svg
     width="20"
     height="20"
@@ -135,7 +125,7 @@ const ScalesIcon = () => (
   </svg>
 );
 
-const MenuIcon = () => (
+export const MenuIcon = () => (
   <svg
     width="24"
     height="24"
@@ -151,81 +141,3 @@ const MenuIcon = () => (
     <line x1="3" y1="18" x2="21" y2="18" />
   </svg>
 );
-
-export default function Sidebar() {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-
-  const menuItems: MenuItem[] = [
-    { icon: HomeIcon, label: "DASHBOARD", path: "/dashboard" },
-
-    {
-      icon: AlertTriangleIcon,
-      label: "VIOLATION RECORDS",
-      path: "/violation-records",
-    },
-    {
-      icon: MapIcon,
-      label: "MAP VIEW",
-      path: "/map-view",
-    },
-    { icon: FileBarChartIcon, label: "GENERATE REPORT", path: "/report" },
-    { icon: CalendarIcon, label: "CALENDAR", path: "/calendar" },
-    { icon: UsersIcon, label: "USER MANAGEMENT", path: "/user-management" },
-    {
-      icon: ScalesIcon,
-      label: "ORDINANCES",
-      path: "/ordinances",
-    },
-  ];
-
-  return (
-    <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
-      {/* Header */}
-      <div className="sidebar-header">
-        <div className={`logo ${isCollapsed ? "collapsed" : ""}`}>
-          {isCollapsed ? (
-            <img src={itmoLogo} alt="iTMO Logo" className="logo-icon" />
-          ) : (
-            <img src={itmoLogo} alt="iTMO Logo" className="logo-full" />
-          )}
-        </div>
-      </div>
-
-      {/* Hamburger Button */}
-      <button
-        onClick={() => setIsCollapsed(!isCollapsed)}
-        className="hamburger-btn"
-        aria-label="Toggle sidebar"
-      >
-        <MenuIcon />
-      </button>
-
-      {/* Navigation Items */}
-      <nav className="sidebar-nav">
-        {menuItems.map((item, index) => {
-          const Icon = item.icon;
-          return (
-            <Link
-              key={index}
-              to={item.path}
-              className={`nav-item ${isCollapsed ? "collapsed" : ""} ${index === 0 ? "active" : ""}`}
-            >
-              <div className="icon-wrapper">
-                <Icon />
-              </div>
-              {!isCollapsed && <span className="nav-label">{item.label}</span>}
-            </Link>
-          );
-        })}
-      </nav>
-
-      {/* Bottom Settings Button */}
-      <div className="sidebar-footer">
-        <button className={`settings-btn ${isCollapsed ? "collapsed" : ""}`}>
-          <FileBarChartIcon />
-          {!isCollapsed && <span className="nav-label">SETTINGS</span>}
-        </button>
-      </div>
-    </div>
-  );
-}
