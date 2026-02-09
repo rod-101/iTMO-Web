@@ -3,7 +3,7 @@ import "../styles/newSidebar.css";
 import itmoLogo from "../assets/sidebar/itmo-logo.svg";
 import { Link } from "react-router-dom";
 import { MenuIcon, FileBarChartIcon } from "./icons";
-import { menuItems } from "./sidebarConfig";
+import { menuItems } from "./menuConfig";
 
 export default function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
